@@ -1,24 +1,20 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { ReactNode } from "react";
 
 interface ChecklistViewerProps {
   content: string;
+  checked: Record<string, boolean>;
+  onCheckedChange: (updated: Record<string, boolean>) => void;
 }
 
-export default function ChecklistViewer({ content }: ChecklistViewerProps) {
-  const [checked, setChecked] = useState<Record<string, boolean>>({});
-
-  useEffect(() => {
-    setChecked({});
-  }, [content]);
-
+export default function ChecklistViewer({ content, checked, onCheckedChange }: ChecklistViewerProps) {
   const toggle = useCallback((id: string) => {
-    setChecked((prev) => ({ ...prev, [id]: !prev[id] }));
-  }, []);
+    onCheckedChange({ ...checked, [id]: !checked[id] });
+  }, [checked, onCheckedChange]);
 
   let counter = 0;
 

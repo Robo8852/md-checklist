@@ -4,12 +4,14 @@ import { useCallback, useEffect, useState } from "react";
 import Toolbar from "@/components/Toolbar";
 import ChecklistViewer from "@/components/ChecklistViewer";
 import DropZone from "@/components/DropZone";
+import { exportAsMarkdown, exportAsPdf, exportAsDocx } from "@/lib/exportUtils";
 
 const DEFAULT_FILE = "discovery-call.md";
 
 export default function Home() {
   const [content, setContent] = useState("");
   const [filename, setFilename] = useState(DEFAULT_FILE);
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetch("/default.md")
@@ -25,13 +27,31 @@ export default function Home() {
   const handleFileLoad = useCallback((text: string, name: string) => {
     setContent(text);
     setFilename(name);
+    setChecked({});
     window.scrollTo(0, 0);
   }, []);
 
+  const handleExport = useCallback(
+    (format: "pdf" | "docx" | "md") => {
+      switch (format) {
+        case "md":
+          exportAsMarkdown(content, checked, filename);
+          break;
+        case "pdf":
+          exportAsPdf(filename);
+          break;
+        case "docx":
+          exportAsDocx(content, checked, filename);
+          break;
+      }
+    },
+    [content, checked, filename],
+  );
+
   return (
     <>
-      <Toolbar filename={filename} onFileLoad={handleFileLoad} />
-      <ChecklistViewer content={content} />
+      <Toolbar filename={filename} onFileLoad={handleFileLoad} onExport={handleExport} />
+      <ChecklistViewer content={content} checked={checked} onCheckedChange={setChecked} />
       <DropZone onFileDrop={handleFileLoad} />
     </>
   );
