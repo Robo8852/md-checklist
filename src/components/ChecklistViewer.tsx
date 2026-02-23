@@ -25,7 +25,7 @@ export default function ChecklistViewer({ content }: ChecklistViewerProps) {
   function withCheckbox(id: string, children: ReactNode) {
     const isChecked = !!checked[id];
     return (
-      <span className="flex items-start gap-3">
+      <span className="checklist-row">
         <input
           type="checkbox"
           checked={isChecked}
@@ -38,7 +38,7 @@ export default function ChecklistViewer({ content }: ChecklistViewerProps) {
   }
 
   return (
-    <article className="prose mx-auto max-w-[900px] px-4 pt-16 pb-16 md:px-6 lg:px-8">
+    <article className="prose mx-auto max-w-[900px] px-3 pt-14 pb-12 sm:px-4 md:px-6 lg:px-8">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{

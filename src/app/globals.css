@@ -7,7 +7,7 @@
   --text: #1e293b;
   --text-muted: #64748b;
   --border: #e2e8f0;
-  --check-size: 1.25rem;
+  --check-size: 1.5rem;
 }
 
 @theme inline {
@@ -20,46 +20,55 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Prose styles */
+/* Prose styles — mobile-first */
 .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
 .prose h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
   padding-bottom: 0.5rem;
 }
 
 .prose h2 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: var(--primary);
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.3rem;
 }
 
-.prose h3 { font-size: 1.25em; color: var(--text); }
-.prose h4 { font-size: 1.1em; color: var(--text-muted); }
+.prose h3 { font-size: 1.1em; color: var(--text); }
+.prose h4 { font-size: 1em; color: var(--text-muted); }
 
 .prose p { margin-bottom: 1rem; }
 
 .prose ul, .prose ol {
   margin-bottom: 1rem;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 
-.prose li { margin-bottom: 0.35rem; }
+.prose li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.prose ol { list-style: none; counter-reset: none; }
+.prose ul { list-style: none; }
 
 .prose hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .prose blockquote {
@@ -75,11 +84,13 @@ body {
   text-decoration: underline;
 }
 
-/* Custom checkbox */
+/* Custom checkbox — large touch target */
 .checklist-box {
   appearance: none;
   width: var(--check-size);
   height: var(--check-size);
+  min-width: var(--check-size);
+  min-height: var(--check-size);
   border: 2px solid var(--primary);
   border-radius: 4px;
   background: white;
@@ -87,6 +98,15 @@ body {
   flex-shrink: 0;
   margin-top: 2px;
   transition: all 0.15s ease;
+  /* Larger tap area on mobile */
+  padding: 0;
+  position: relative;
+}
+
+.checklist-box::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
 }
 
 .checklist-box:checked {
@@ -101,10 +121,36 @@ body {
   color: var(--text-muted);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  body { font-size: 16px; }
+/* Checklist row — good tap spacing */
+.checklist-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
 }
-@media (min-width: 769px) {
+
+.checklist-row > .checklist-box {
+  margin-right: 0.25rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
   body { font-size: 17px; }
+
+  :root { --check-size: 1.25rem; }
+
+  .prose h1 { font-size: 2em; }
+  .prose h2 { font-size: 1.5em; }
+  .prose h3 { font-size: 1.25em; }
+  .prose h4 { font-size: 1.1em; }
+
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose ul, .prose ol { padding-left: 1rem; }
+  .prose hr { margin: 2rem 0; }
+
+  .checklist-row { gap: 0.75rem; }
 }

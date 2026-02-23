@@ -77,18 +77,67 @@ Everything we need to know before we start building your website.
 
 ---
 
-## Timeline & Decisions
+## Budget
 
-31. Is there a deadline or reason you need the site done by a certain date?
-32. Who makes the final call on the design and content? (Just you, a business partner, spouse, etc.)
-33. What is your budget range for this project?
-34. Do you have a clear picture of what you're getting for that budget?
+31. What is your budget range for this project?
+
+---
+
+## What You're Getting
+
+So here's the deal — the website I'm going to build you runs on the same technology that Netflix and Nike use. This isn't WordPress, this isn't Wix. This is production-grade tech that Fortune 500 companies pay engineering teams six figures to maintain.
+
+Normally a build like this runs anywhere from $5,000 to $10,000. I'm offering it to you for $3,000 — and that's because I want to build a long-term relationship, not just hand you a site and disappear.
+
+Here's what's included at that price:
+
+- **Custom-built website** on the same tech stack as Netflix & Nike (Next.js / React)
+- **SEO baked in from day one** — structured so Google actually finds you and ranks you
+- **GEO-optimized** — that means your business shows up in AI search results too (ChatGPT, Perplexity, Google AI Overviews) — most agencies don't even know this exists yet
+- **Mobile-first design** — looks and works great on every device
+- **Fast, secure, and modern** — no bloated plugins, no page builders slowing you down
+- **AI-powered features** coming soon — we're building intelligent tools that can answer your customers' questions right on your site (this is still in development, but you'll be first in line)
+
+**How payment works:**
+
+- $1,500 upfront to kick off the project
+- $1,500 when the site is complete and you're happy with it
+- Timeline: 4 to 8 weeks from start to launch
+
+You're not just getting a website — you're getting the highest level of technology available, at a price that's fair for both of us.
 
 ---
 
 ## After We Launch
 
-35. Do you want us to keep maintaining and updating the site after it goes live?
-36. Are you running or planning to run any ads (Google Ads, Facebook, etc.) that would send people to the site?
-37. Do you want regular reports on how the site is performing — and how often?
-38. Are you interested in showing up in AI search results (like ChatGPT and Google AI) in addition to regular Google?
+32. Do you want us to keep maintaining and updating the site after it goes live?
+33. Are you interested in showing up in AI search results (like ChatGPT and Google AI) in addition to regular Google?
+
+---
+
+## Monthly Maintenance Options
+
+Once your site is live, I offer two tiers to keep everything running and growing:
+
+**Standard Maintenance — $150–$300/month**
+
+- Content updates and minor changes
+- Security patches and software updates
+- Hosting and uptime monitoring
+- Monthly SEO check-ins
+- Priority support when you need something fixed or changed
+
+**AI-Powered Maintenance — $400–$600/month**
+
+- Everything in Standard, plus:
+- **AI voice agent** that answers your customers' questions and handles calls 24/7 (powered by Retell AI)
+- Call monitoring and AI prompt tuning
+- Monthly analytics and call reports
+- AI usage costs included
+
+Think about it this way — the AI plan is cheaper than one part-time employee, and it never calls in sick, never takes a day off, and never puts a customer on hold.
+
+34. Which maintenance tier interests you?
+   - Standard ($150–$300/month)
+   - AI-Powered ($400–$600/month)
+   - Not sure yet — tell me more later

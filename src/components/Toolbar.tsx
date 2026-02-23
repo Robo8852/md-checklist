@@ -24,12 +24,12 @@ export default function Toolbar({ filename, onFileLoad }: ToolbarProps) {
 
   return (
     <header
-      className="fixed top-0 right-0 left-0 z-50 flex items-center gap-3 px-4 py-2"
+      className="fixed top-0 right-0 left-0 z-50 flex items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4"
       style={{ background: "var(--primary)", borderBottom: "1px solid var(--border)" }}
     >
       <button
         onClick={() => fileInputRef.current?.click()}
-        className="shrink-0 cursor-pointer rounded px-3 py-1.5 text-sm font-medium text-white transition-colors"
+        className="shrink-0 cursor-pointer rounded px-3 py-2 text-sm font-medium text-white transition-colors active:scale-95"
         style={{ background: "var(--accent)" }}
       >
         Open .md file
